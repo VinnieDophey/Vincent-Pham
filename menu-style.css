@@ -1,0 +1,225 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.bg {
+  background-color: rgba(25, 25, 25, 1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Solar system container that's always square and fits within screen */
+.solar-system {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vmin; /* 90% of the smaller viewport dimension */
+  height: 100vmin; /* 90% of the smaller viewport dimension */
+}
+
+/* Sun styles */
+.sun {
+  position: absolute;
+  width: 16vmin;
+  height: 16vmin;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffde00;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1vmin #ffde0080, 0 0 0 2vmin #ffde0040,
+    0 0 0 3vmin #ffde0020, 0 0 0 4vmin #ffde0010, 0 0 0 5vmin #ffde0000,
+    0 0 2vmin 5vmin #ffde0010;
+  animation: sunrise 2s linear forwards, rays 2s 2s infinite linear;
+  z-index: 1;
+  opacity: 0.2;
+}
+@keyframes sunrise {
+  0% {
+    box-shadow: none;
+    opacity: 0.2;
+  }
+  100% {
+    box-shadow: 0 0 0 1vmin #ffde0080, 0 0 0 2vmin #ffde0040,
+      0 0 0 3vmin #ffde0020, 0 0 0 4vmin #ffde0010, 0 0 0 5vmin #ffde0000,
+      0 0 2vmin 5vmin #ffde0010;
+    opacity: 1;
+  }
+}
+
+@keyframes rays {
+  0% {
+    box-shadow: 0 0 0 0 #ffde0080, 0 0 0 1vmin #ffde0080, 0 0 0 2vmin #ffde0040,
+      0 0 0 3vmin #ffde0020, 0 0 0 4vmin #ffde0010, 0 0 2vmin 5vmin #ffde0010;
+  }
+  100% {
+    box-shadow: 0 0 0 1vmin #ffde0080, 0 0 0 2vmin #ffde0040,
+      0 0 0 3vmin #ffde0020, 0 0 0 4vmin #ffde0010, 0 0 0 5vmin #ffde0000,
+      0 0 2vmin 5vmin #ffde0010;
+  }
+}
+
+.black-hole {
+  position: absolute;
+  width: 12vmin;
+  height: 12vmin;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 50%;
+  /* White outward rays */
+  box-shadow: 0 0 0 1vmin rgba(255, 255, 255, 0.8),
+    0 0 0 2vmin rgba(255, 255, 255, 0.6), 0 0 0 3vmin rgba(255, 255, 255, 0.4),
+    0 0 0 4vmin rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  animation: appear 2s ease-in-out forwards, pulse 3s infinite linear;
+  opacity: 0;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 1vmin rgba(255, 255, 255, 0.5),
+      0 0 0 2vmin rgba(255, 255, 255, 0.3), 0 0 0 3vmin rgba(255, 255, 255, 0.2),
+      0 0 0 4vmin rgba(255, 255, 255, 0.1), 0 0 0 5vmin rgba(255, 255, 255, 0),
+      0 0 2vmin 5vmin rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5),
+      0 0 0 1vmin rgba(255, 255, 255, 0.5), 0 0 0 2vmin rgba(255, 255, 255, 0.3),
+      0 0 0 3vmin rgba(255, 255, 255, 0.2), 0 0 0 4vmin rgba(255, 255, 255, 0.1),
+      0 0 2vmin 5vmin rgba(255, 255, 255, 0.1);
+  }
+}
+
+.btn1,
+.btn2,
+.btn3 {
+  position: absolute;
+  width: 20%; /* Relative to solar-system container */
+  height: 20%;
+  left: 50%;
+  top: 50%;
+  transform-origin: center;
+}
+
+.marble {
+  position: absolute;
+  width: 16vmin;
+  height: 16vmin;
+  border-radius: 50%;
+  transition: box-shadow 0.5s ease-out;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.marble:hover {
+  box-shadow: inset 0 0 50px #fff, inset 20px 0 80px rgb(157, 255, 0),
+    inset -20px 0 80px rgb(255, 238, 0), inset 20px 0 300px rgb(255, 166, 0),
+    inset -20px 0 300px rgb(245, 255, 104), 0 0 50px #fff,
+    -10px 0 80px rgb(255, 238, 0), 10px 0 80px rgb(255, 238, 0);
+}
+
+/* Orbit animations */
+.btn1 {
+  animation: orbit1 30s linear infinite;
+}
+.btn2 {
+  animation: orbit2 30s linear infinite;
+}
+.btn3 {
+  animation: orbit3 30s linear infinite;
+}
+
+@keyframes orbit1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(28vmin)
+      rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(28vmin)
+      rotate(-360deg);
+  }
+}
+
+@keyframes orbit2 {
+  from {
+    transform: translate(-50%, -50%) rotate(120deg) translateX(28vmin)
+      rotate(-120deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(480deg) translateX(28vmin)
+      rotate(-480deg);
+  }
+}
+
+@keyframes orbit3 {
+  from {
+    transform: translate(-50%, -50%) rotate(240deg) translateX(28vmin)
+      rotate(-240deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(600deg) translateX(28vmin)
+      rotate(-600deg);
+  }
+}
+
+/* Centered text inside marbles */
+.centeredText {
+  font-size: 1.5vmin; /* Scale text with container */
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+.centeredTextHole {
+  font-size: 3vmin; /* Slightly larger for the black hole */
+  color: white;
+  text-shadow: 0 0 5px black;
+  font-weight: bold; /* Make it stand out more */
+  z-index: 2; /* Ensure text appears above the black hole */
+}
+
+.marble2 {
+  position: absolute;
+  width: 12vmin;
+  height: 12vmin;
+  border-radius: 50%;
+  transition: box-shadow 0.5s ease-out;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.marble2:hover {
+  box-shadow: 
+    /* Inner white glow */ inset 0 0 20px rgba(255, 255, 255, 0.8),
+    inset 0 0 40px rgba(255, 255, 255, 0.6),
+    /* Outer white bloom/glow */ 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 50px rgba(255, 255, 255, 0.2);
+}
