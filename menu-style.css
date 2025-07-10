@@ -199,7 +199,12 @@ html {
   font-weight: bold; /* Make it stand out more */
   z-index: 2; /* Ensure text appears above the black hole */
 }
-
+.centeredTextHole1 {
+  font-size: 1vmin; /* Slightly larger for the black hole */
+  color: rgba(255, 255, 255, 0.527);
+  text-shadow: 0 0 5px black;
+  z-index: 1; /* Ensure text appears above the black hole */
+}
 .marble2 {
   position: absolute;
   width: 12vmin;
