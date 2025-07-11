@@ -69,46 +69,6 @@ html {
   }
 }
 
-.black-hole {
-  position: absolute;
-  width: 12vmin;
-  height: 12vmin;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: black;
-  border-radius: 50%;
-  /* White outward rays */
-  box-shadow: 0 0 0 1vmin rgba(255, 255, 255, 0.8),
-    0 0 0 2vmin rgba(255, 255, 255, 0.6), 0 0 0 3vmin rgba(255, 255, 255, 0.4),
-    0 0 0 4vmin rgba(255, 255, 255, 0.2);
-  z-index: 1;
-  animation: appear 2s ease-in-out forwards, pulse 3s infinite linear;
-  opacity: 0;
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 1vmin rgba(255, 255, 255, 0.5),
-      0 0 0 2vmin rgba(255, 255, 255, 0.3), 0 0 0 3vmin rgba(255, 255, 255, 0.2),
-      0 0 0 4vmin rgba(255, 255, 255, 0.1), 0 0 0 5vmin rgba(255, 255, 255, 0),
-      0 0 2vmin 5vmin rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5),
-      0 0 0 1vmin rgba(255, 255, 255, 0.5), 0 0 0 2vmin rgba(255, 255, 255, 0.3),
-      0 0 0 3vmin rgba(255, 255, 255, 0.2), 0 0 0 4vmin rgba(255, 255, 255, 0.1),
-      0 0 2vmin 5vmin rgba(255, 255, 255, 0.1);
-  }
-}
-
 .btn1,
 .btn2,
 .btn3 {
@@ -227,4 +187,44 @@ html {
     /* Outer white bloom/glow */ 0 0 10px rgba(255, 255, 255, 0.8),
     0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4),
     0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+.black-hole {
+  position: absolute;
+  width: 12vmin;
+  height: 12vmin;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 50%;
+  /* White outward rays */
+  box-shadow: 0 0 0 1vmin rgba(255, 255, 255, 0.8),
+    0 0 0 2vmin rgba(255, 255, 255, 0.6), 0 0 0 3vmin rgba(255, 255, 255, 0.4),
+    0 0 0 4vmin rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  animation: appear 2s ease-in-out forwards, pulse 3s infinite linear;
+  opacity: 0;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 1vmin rgba(255, 255, 255, 0.5),
+      0 0 0 2vmin rgba(255, 255, 255, 0.3), 0 0 0 3vmin rgba(255, 255, 255, 0.2),
+      0 0 0 4vmin rgba(255, 255, 255, 0.1), 0 0 0 5vmin rgba(255, 255, 255, 0),
+      0 0 2vmin 5vmin rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5),
+      0 0 0 1vmin rgba(255, 255, 255, 0.5), 0 0 0 2vmin rgba(255, 255, 255, 0.3),
+      0 0 0 3vmin rgba(255, 255, 255, 0.2), 0 0 0 4vmin rgba(255, 255, 255, 0.1),
+      0 0 2vmin 5vmin rgba(255, 255, 255, 0.1);
+  }
 }

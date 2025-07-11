@@ -5,25 +5,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index-style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   </head>
   <body>
-    <div class="bg"></div>
-
-    <main>
+    <div class="img-container">
+      <img class="img" src="bg.jpg" alt="" />
+      <!-- <div class="img-overlay"></div> -->
+    </div>
+    <top>
       <div id="name">
-        <h1>VINCENT PHAM</h1>
+        <h1>- Vincent Pham -</h1>
       </div>
-      <a href="menu.html" style="text-decoration: none">
-        <button class="btn-76">
-          ENTER
-          <span class="top"></span>
-          <span class="right"></span>
-          <span class="bottom"></span>
-          <span class="left"></span>
-        </button>
-      </a>
-    </main>
-
+    </top>
+    <div class="mainbg">
+      <main>
+        <a href="menu.html" style="text-decoration: none"></a>
+        <div class="mainText">
+          <h2>Hello Summoners (this is placeholder lol)!</h2>
+          <p>I'm Joe, a passionate League of Legends player since Season 3. What started as a casual hobby turned into a lifelong passion for the rift, the champions, and the competitive scene.</p>
+          
+          <h3>My Journey</h3>
+          <p>From my first pentakill with Master Yi to hitting Diamond in Season 9, I've experienced all the highs and lows this game has to offer. I main jungle but can fill any role when needed (except support - I always seem to facecheck bushes).</p>
+          
+          <div class="game-highlights">
+            <div class="champion-card">
+              <h4>Main Champion</h4>
+              <p>Lee Sin</p>
+              <p>500+ games</p>
+              <p>"Perfect execution of Insec kicks is my meditation"</p>
+            </div>
+            <div class="champion-card">
+              <h4>Current Obsession</h4>
+              <p>Viego</p>
+              <p>"The ruined king mechanic makes every game feel fresh"</p>
+            </div>
+            <div class="champion-card">
+              <h4>Guilty Pleasure</h4>
+              <p>Yuumi</p>
+              <p>"Sometimes you just want to relax and sip coffee while playing"</p>
+            </div>
+          </div>
+          
+          <h3>Outside the Rift</h3>
+          <p>When I'm not dodging skillshots, I enjoy analyzing pro matches, creating highlight reels of my plays (that mostly feature me getting outplayed), and arguing about whether last hitting should be removed from the game.</p>
+        
+      </main>
+    </div>
+    <div class="black-hole">
+          <a href="menu.html" style="text-decoration: none">
+            <div class="marble2">
+              <div class="hole-text-container">
+                <div class="centeredTextHole">- Menu -</div>
+              </div>
+            </div>
+          </a>
+        </div>
     <script src="script.js"></script>
   </body>
 </html>
