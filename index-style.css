@@ -9,6 +9,7 @@ html {
 body {
   background-color: rgba(25, 25, 25, 1);
   display: flex;
+
   flex-direction: column;
   min-height: 100vh;
 }
@@ -39,7 +40,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80vh; /* Shows only 80% of image initially */
+  height: 100vh; /* Shows only 80% of image initially */
   overflow: hidden;
   z-index: -10;
 }
@@ -86,9 +87,6 @@ main {
   background-attachment: fixed;
 }
 
-.mainContainer {
-  margin-top: -10vw;
-}
 #name {
   font-family: SpaceGrotesk-Light;
   color: #fff;
